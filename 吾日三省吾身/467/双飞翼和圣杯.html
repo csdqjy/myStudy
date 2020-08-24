@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test transform</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .main {
+        position: relative;
+      }
+      .center {
+        position: absolute;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 220px;
+        overflow: hidden;
+      }
+      .inner {
+        height: 100px;
+        background-color: silver;
+      }
+      .fl {
+        float: left;
+      }
+      .fr {
+        float: right;
+      }
+      .fl,
+      .fr {
+        width: 220px;
+        height: 100px;
+      }
+      .left {
+        background-color: red;
+      }
+      .right {
+        background-color: black;
+      }
+      .clearfix::after {
+        display: block;
+        content: "";
+        clear: both;
+        height: 0;
+        visibility: hidden;
+      }
+      .rect {
+        width: 50vh;
+        height: 50v;
+        border: 1px solid rgba(0, 0, 0, 1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main clearfix">
+      <div class="center">
+        <div class="inner">测试测试测试测试测试测试测试测试测试测试测试</div>
+      </div>
+      <div class="left fl"></div>
+      <div class="right fr"></div>
+    </div>
+    <div class="rect"></div>
+  </body>
+</html>

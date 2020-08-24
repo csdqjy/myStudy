@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let ary = [];
+      (function fn() {
+        let num = Math.round(Math.random() * (32 - 2) + 2);
+
+        if (ary.length < 5 && !ary.includes(num)) {
+          ary.push(num);
+        }
+        if (ary.includes(num)) {
+          fn();
+        }
+      })();
+
+      console.log(ary);
+    </script>
+  </body>
+</html>

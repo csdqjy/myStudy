@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="renderer" content="webkit" />
+    <title>Document</title>
+    <style>
+      button {
+        width: 200px;
+        height: 40px;
+        border: none;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="local">设置localStorage</button>
+    <button id="session">设置sessionStorage</button>
+  </body>
+</html>
+<script type="text/javascript">
+  window.onstorage = function (e) {
+    console.log(
+      e.key + " 键已经从 " + e.oldValue + " 改变为 " + e.newValue + "."
+    );
+  };
+  document.querySelector("#local").addEventListener("click", () => {
+    localStorage.setItem("local", Math.random());
+  });
+  document.querySelector("#session").addEventListener("click", () => {
+    sessionStorage.setItem("session", Math.random());
+  });
+</script>

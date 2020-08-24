@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+      .anim-opacity2 {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        background: #ffcccc;
+        opacity: 0;
+      }
+      @keyframes opacity2 {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 0.8;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      window.onclick = function (e) {
+        let div = document.createElement("DIV");
+        div.className = "anim-opacity2";
+
+        document.body.appendChild(div);
+
+        div["style"]["animationName"] = "opacity2";
+        div["style"]["animationDuration"] = "1s";
+        div["style"]["animationTimingFunction"] = "linear";
+        div["style"]["left"] = e.clientX + "px";
+        div["style"]["top"] = e.clientY + "px";
+
+        div.addEventListener("animationend", () => {
+          document.body.removeChild(div);
+        });
+      };
+    </script>
+  </body>
+</html>

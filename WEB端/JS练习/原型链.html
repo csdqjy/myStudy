@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+    let Fn = function () {
+        this.name = "son";
+    };
+    Fn.prototype.name = "father";
+
+    let pro = Fn.prototype;
+
+    Fn.prototype = {
+        name: "boy",
+    };
+
+    let son = new Fn
+    console.log( son , pro , Fn.prototype )
+
+    </script>
+    </body>
+</html>

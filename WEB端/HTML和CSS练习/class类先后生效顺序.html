@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .pionter {
+        position: relative;
+        display: block;
+        color: pink;
+        width: 0px;
+        height: 0px;
+        border-right: 100px solid transparent;
+        border-bottom: 70px solid pink;
+        border-left: 100px solid transparent;
+        transform: rotate(35deg);
+      }
+      .pionter:before {
+        color: pink;
+        border-bottom: 80px solid pink;
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+        position: absolute;
+        height: 0;
+        width: 0;
+        top: -45px;
+        left: -65px;
+        display: block;
+        content: "";
+        transform: rotate(-35deg);
+      }
+      .pionter:after {
+        position: absolute;
+        display: block;
+        color: pink;
+        top: 3px;
+        left: -105px;
+        width: 0px;
+        height: 0px;
+        border-right: 100px solid transparent;
+        border-bottom: 70px solid pink;
+        border-left: 100px solid transparent;
+        content: "";
+        transform: rotate(-70deg);
+      }
+      .pionterBox {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        transform: rotate(360deg);
+        transition: all 0.5s linear;
+      }
+      body {
+        width: 100%;
+      }
+      .click {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        background: #ffcccc;
+        opacity: 0;
+        animation: 2s myfirst 0.5 linear;
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- <div class="pionterBox">
+      <div class="pionter"></div>
+    </div> -->
+    <div class="click"></div>
+    <script>
+      window.onload = function () {
+        let pionter = document.querySelector(".pionterBox");
+        window.onmousemove = function (e) {
+          pionter.style["left"] = e.clientX + "px";
+          pionter.style["top"] = e.clientY + "px";
+        };
+        let click = document.querySelector(".click");
+        window.onclick = function (e) {
+          click.style["left"] = e.clientX + "px";
+          click.style["top"] = e.clientY + "px";
+          click.style["opacity"] = "0";
+        };
+      };
+    </script>
+  </body>
+</html>

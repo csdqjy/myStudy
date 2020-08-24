@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 两数之和 -->
+    <script>
+      let ary = [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        7,
+        6,
+        5,
+        4,
+        5,
+        6,
+        7,
+        8,
+        6,
+        5,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+      ];
+      let num = 13;
+      let arr = [];
+      ary.forEach((item, index) => {
+        for (let i = index; i < ary.length; ++i) {
+          if (item + ary[i] === num) {
+            if (arr.includes(i) || arr.includes(index)) {
+              continue;
+            }
+            arr.push(index);
+            arr.push(i);
+          }
+        }
+      });
+      console.log(arr);
+    </script>
+    <!-- 三数之和 -->
+    <script>
+
+    </script>
+  </body>
+</html>
