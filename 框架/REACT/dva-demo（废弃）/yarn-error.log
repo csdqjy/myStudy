@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add babel-plugin-import
+  /usr/local/bin/node /usr/local/bin/yarn add antd
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: EINVAL: invalid argument, unlink '/Users/szx/Desktop/未命名文件夹/学习/框架/REACT/dva-demo/node_modules/is-data-descriptor/node_modules/kind-of'
+  Error: ENOENT: no such file or directory, copyfile '/Users/szx/Library/Caches/Yarn/v6/npm-aws-sign2-0.6.0-14342dd38dbcc94d0e5b87d763cd63612c0e794f-integrity/node_modules/aws-sign2/LICENSE' -> '/Users/szx/Desktop/未命名文件夹/学习/框架/REACT/dva-demo/node_modules/less/node_modules/aws-sign2/LICENSE'
 
 npm manifest: 
   {
