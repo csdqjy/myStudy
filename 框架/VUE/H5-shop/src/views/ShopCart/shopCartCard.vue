@@ -55,12 +55,7 @@ import {
   SubmitBar
 } from "vant";
 
-Vue.use(Cell);
-Vue.use(CellGroup);
-Vue.use(Icon);
-Vue.use(Checkbox);
-Vue.use(CheckboxGroup);
-Vue.use(SubmitBar);
+Vue.use(Cell).use(CellGroup).use(Icon).use(Checkbox).use(CheckboxGroup).use(SubmitBar);
 
 /* 引入组件 */
 import GoodsCard from "../../components/goodsCard";

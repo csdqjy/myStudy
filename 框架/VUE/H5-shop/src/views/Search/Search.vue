@@ -20,8 +20,7 @@
 import Vue from "vue";
 import { Search, NavBar } from "vant";
 
-Vue.use(Search);
-Vue.use(NavBar);
+Vue.use(Search).use(NavBar);
 
 export default {
   name: "search",

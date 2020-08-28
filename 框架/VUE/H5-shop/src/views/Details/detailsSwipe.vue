@@ -19,10 +19,7 @@
 import Vue from "vue";
 import { NavBar, Swipe, SwipeItem, Lazyload } from "vant";
 
-Vue.use(NavBar);
-Vue.use(Swipe);
-Vue.use(SwipeItem);
-Vue.use(Lazyload);
+Vue.use(NavBar).use(Swipe).use(SwipeItem).use(Lazyload);
 
 export default {
   name: "detailsSwipe",

@@ -1,9 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home/Home.vue";
-import Search from "../views/Search/Search.vue";
-import Details from "../views/Details/Details.vue";
-import ShopCart from "../views/ShopCart/ShopCart.vue";
 
 Vue.use(VueRouter);
 
@@ -15,7 +11,7 @@ const routes = [
   {
     path: "/home",
     name: "Home",
-    component: Home,
+    component: () => import("@/views/Home/Home.vue"),
     meta: {
       title: "主页",
     },
@@ -23,7 +19,7 @@ const routes = [
   {
     path: "/search",
     name: "Search",
-    component: Search,
+    component: () => import("@/views/Search/Search.vue"),
     meta: {
       title: "搜索",
     },
@@ -31,12 +27,12 @@ const routes = [
   {
     path: "/details",
     name: "Details",
-    component: Details,
+    component: () => import("@/views/Details/Details.vue"),
   },
   {
     path: "/shopCart",
     name: "ShopCart",
-    component: ShopCart,
+    component: () => import("@/views/ShopCart/ShopCart.vue"),
   },
 ];
 

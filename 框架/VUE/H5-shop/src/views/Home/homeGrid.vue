@@ -10,9 +10,7 @@
 import Vue from "vue";
 import { Grid, GridItem,Image } from "vant";
 
-Vue.use(Grid);
-Vue.use(GridItem);
-Vue.use(Image);
+Vue.use(Grid).use(GridItem).use(Image);
 
 export default {
   name: "homeGrid",

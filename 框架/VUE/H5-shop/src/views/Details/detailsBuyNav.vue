@@ -35,10 +35,7 @@
 import Vue from "vue";
 import { GoodsAction, GoodsActionIcon, GoodsActionButton, Sku } from "vant";
 
-Vue.use(GoodsAction);
-Vue.use(GoodsActionButton);
-Vue.use(GoodsActionIcon);
-Vue.use(Sku);
+Vue.use(GoodsAction).use(GoodsActionButton).use(GoodsActionIcon).use(Sku);
 
 import { Toast } from "vant";
 
