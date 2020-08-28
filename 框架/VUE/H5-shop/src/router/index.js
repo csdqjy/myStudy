@@ -9,12 +9,15 @@ Vue.use(VueRouter);
 
 const routes = [
   {
+    path: '/',
+    redirect: '/home'
+  },
+  {
     path: "/home",
     name: "Home",
     component: Home,
     meta: {
       title: "主页",
-      tx: 1,
     },
   },
   {
@@ -23,7 +26,6 @@ const routes = [
     component: Search,
     meta: {
       title: "搜索",
-      tx: 2,
     },
   },
   {

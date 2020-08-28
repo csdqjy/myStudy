@@ -13,8 +13,15 @@
       <!-- 轮播图 -->
       <div v-swiper:mySwiper="swiperOption">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" :key="banner" v-for="banner in banners">
-            <img class="swiper-slide-img" :src="banner" />
+          <div
+            class="swiper-slide"
+            :key="banner"
+            v-for="banner in banners"
+          >
+            <img
+              class="swiper-slide-img"
+              :src="banner"
+            />
           </div>
         </div>
       </div>
@@ -40,11 +47,11 @@ export default {
 
   components: {
     Swiper,
-    SwiperSlide
+    SwiperSlide,
   },
 
   directives: {
-    swiper: directive
+    swiper: directive,
   },
 
   data() {
@@ -54,14 +61,14 @@ export default {
         notNextTick: true,
         loop: true,
         autoplay: true,
-        observer: true
+        observer: true,
       },
       banners: [
         "https://img.yzcdn.cn/vant/apple-1.jpg",
         "https://img.yzcdn.cn/vant/apple-2.jpg",
         "https://img.yzcdn.cn/vant/apple-3.jpg",
-        "https://img.yzcdn.cn/vant/apple-4.jpg"
-      ]
+        "https://img.yzcdn.cn/vant/apple-4.jpg",
+      ],
     };
   },
 
@@ -70,14 +77,14 @@ export default {
   methods: {
     onSearchFocus() {
       this.$router.push("/search");
-    }
+    },
   },
 
   computed: {
     /* swiper() {
       return this.$refs.mySwiper;
     } */
-  }
+  },
 };
 </script>
 
@@ -100,15 +107,16 @@ export default {
     }
 
     .swiper-slide {
-      width: 3.08rem;
+      width: 100%;
       height: 1.49rem;
       margin: auto;
-      background: #aaa;
+      background: rgba(200, 200, 200, 1);
 
       .swiper-slide-img {
+        display: block;
         width: 3.08rem;
         height: 1.49rem;
-        margin: auto;
+        margin: 0 auto;
       }
     }
   }
