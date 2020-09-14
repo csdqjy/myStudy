@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 防抖
+        let debounce = function (callBakc, delay) {
+            let timeout = null;
+            return function () {
+                clearTimeout(timeout);
+                timeout = null;
+                timeout = setTimeout(() => {
+                    callBakc()
+                }, delay);
+            }
+        };
+
+        // 节流
+        let throttle = function (callBakc, delay) {
+            let time1 = 0;
+            return function () {
+                let time2 = new Date().getTime();
+                if (time2 - time1 > delay) {
+                    callBakc();
+                    time1 = time2;
+                };
+            }
+        };
+        document.addEventListener("click", throttle(function () { console.log(1) }, 1000));
+    </script>
+</body>
+
+</html>

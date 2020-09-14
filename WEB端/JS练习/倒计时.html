@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            padding: 10px;
+            width: 100px;
+            height: 30px;
+            color: #4cc9f0;
+            font-size: 14px;
+            line-height: 30px;
+            text-align: center;
+            background-color: transparent;
+            border: 1px solid #4cc9f0;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        .button:hover {
+            color: white;
+            border: 0;
+            background-color: #4cc9f0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="button">点击发送</div>
+    <script>
+        let button = document.querySelector(".button");
+        let throttle = function (callBack, time) {
+            let start = 0;
+            return function () {
+                let that = this;
+                let arg = arguments;
+                let end = new Date().getTime();
+                if (end - start > time) {
+                    callBack.call(that, ...arg)
+                    start = end;
+                }
+            }
+        };
+        button.addEventListener("click", throttle(function () {
+            console.dir(button)
+            let sendTime = 10;
+            let Interval = null;
+            button.textContent = sendTime;
+            Interval = setInterval(() => {
+                sendTime -= 1;
+                if (sendTime < 0) {
+                    clearTimeout(Interval);
+                    Interval = null;
+                    button.textContent = "点击发送";
+                    sendTime = 10;
+                    return
+                }
+                button.textContent = sendTime;
+            }, 1000);
+        }, 10000));
+    </script>
+</body>
+
+</html>
