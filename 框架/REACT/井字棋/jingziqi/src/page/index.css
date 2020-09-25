@@ -1,0 +1,19 @@
+p {
+	margin: 0;
+}
+.box {
+	display: flex;
+	flex-wrap: wrap;
+	width: 180px;
+	margin: 50px;
+	height: 180px;
+}
+.box .p {
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 60px;
+	height: 60px;
+	border: 0.01px solid rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+
+<body>
+    <div id="app">
+        <span :title="message">
+            鼠标悬停几秒钟查看此处动态绑定的提示信息！
+        </span>
+        <el-button>默认按钮</el-button>
+        <template v-for="(item,index) in arr">
+            <div v-if="index!==2">v=for{{item}}</div>
+        </template>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="./vue.js"></script>
+</body>
+
+</html>
