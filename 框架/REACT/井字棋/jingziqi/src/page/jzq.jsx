@@ -17,11 +17,11 @@ class jzq extends React.Component {
 		if (this.state.list.includes(index)) {
 			return
 		};
-		if (fn(this.state.xList)) {
+		if (this.fn(this.state.xList)) {
 			alert('X获胜');
 			return
 
-		} else if (fn(this.state.oList)) {
+		} else if (this.fn(this.state.oList)) {
 			alert('O获胜');
 			return
 		}
@@ -46,16 +46,6 @@ class jzq extends React.Component {
 			})
 		};
 
-		function fn(arr) {
-			return arr.includes(0) && arr.includes(1) && arr.includes(2) ||
-				arr.includes(0) && arr.includes(3) && arr.includes(6) ||
-				arr.includes(3) && arr.includes(4) && arr.includes(5) ||
-				arr.includes(1) && arr.includes(4) && arr.includes(7) ||
-				arr.includes(6) && arr.includes(7) && arr.includes(8) ||
-				arr.includes(2) && arr.includes(5) && arr.includes(8) ||
-				arr.includes(0) && arr.includes(4) && arr.includes(8) ||
-				arr.includes(2) && arr.includes(4) && arr.includes(6)
-		};
 	};
 	ai() {
 		let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8].filter(item => {
@@ -108,6 +98,16 @@ class jzq extends React.Component {
 			num: 0,
 		})
 	}
+	fn(arr) {
+		return arr.includes(0) && arr.includes(1) && arr.includes(2) ||
+			arr.includes(0) && arr.includes(3) && arr.includes(6) ||
+			arr.includes(3) && arr.includes(4) && arr.includes(5) ||
+			arr.includes(1) && arr.includes(4) && arr.includes(7) ||
+			arr.includes(6) && arr.includes(7) && arr.includes(8) ||
+			arr.includes(2) && arr.includes(5) && arr.includes(8) ||
+			arr.includes(0) && arr.includes(4) && arr.includes(8) ||
+			arr.includes(2) && arr.includes(4) && arr.includes(6)
+	};
 	render() {
 		let state = this.state;
 		// const status = 'Next player: X';

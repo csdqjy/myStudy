@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .father {
+            display: flex;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            margin: 0;
+            padding: 0;
+        }
+
+        .div1 {
+            background: rgb(67, 191, 207);
+        }
+
+        .div2 {
+            background: rgb(33, 228, 114);
+        }
+
+        .div3 {
+            background: rgb(201, 61, 126);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="div1 box"></div>
+        <div class="div2 box"></div>
+        <div class="div3 box"></div>
+    </div>
+
+    <script>
+        let div1 = document.querySelector(".div1");
+        let div2 = document.querySelector(".div2");
+        let div3 = document.querySelector(".div3");
+        let isDown = false;
+        div3.addEventListener("mousedown", function (e) {
+            let _this = this
+            let mouseX = e.clientX;
+            isDown = true;
+            window.addEventListener("mousemove", function fn(ev) {
+                if (isDown == false) {
+                    return;
+                }
+                let nowX = ev.clientX;
+                _this.style.left = nowX - mouseX + "px"
+            })
+        })
+        div3.addEventListener("mouseup", function () {
+            isDown = false;
+        })
+
+    </script>
+</body>
+
+</html>
